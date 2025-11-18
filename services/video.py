@@ -61,3 +61,15 @@ class VideoService:
             return output_path
         except ffmpeg.Error as e:
             raise Exception(f"FFmpeg error: {e.stderr.decode()}")
+
+    def replace_audio_perfect_sync(self, video_path: str, audio_path: str, output_path: str):
+        video = ffmpeg.input(video_path)
+        audio = ffmpeg.input(audio_path)
+
+        ffmpeg.output(
+            video.video, audio.audio,
+            output_path,
+            vcodec="copy",  # no re-encode video
+            acodec="aac",
+            shortest=None  # don't cut anything, audio is already exact length
+        ).overwrite_output().run(quiet=True)
