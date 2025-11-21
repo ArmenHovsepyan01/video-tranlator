@@ -1,0 +1,9 @@
+./outputs
+./temp
+./uploads
+./venv
+
+.env
+.idea
+.venv
+./idea
