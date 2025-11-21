@@ -141,3 +141,10 @@ websockets==15.0.1
 whisperx==3.7.4
 yarl==1.22.0
 zipp==3.23.0
+edge_tts==7.2.3
+ffmpeg_python==0.2.0
+httpx==0.28.1
+pydub==0.25.1
+sympy==1.14.0
+torch==2.8.0
+whisperx==3.7.4
